@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Add Three.js for background effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Add GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">Ruthvik A</div>
+        <div class="nav-links">
+          <button class="nav-link" data-scroll="experience">Experience</button>
+          <button class="nav-link" data-scroll="education">Education</button>
+          <button class="nav-link" data-scroll="hackathons">Hackathons</button>
+          <button class="nav-link" data-scroll="projects">Projects</button>
+          <button class="nav-link" data-scroll="skills">Skills</button>
+          <button class="nav-link" data-scroll="contact">Contact</button>
+        </div>
+        <button class="resume-btn">
+          <a href="https://drive.google.com/file/d/1yzlEKVJ5R_X9hfYH_tu0lBJVrRvFVDwe/view?usp=drivesdk"
+            class="resume-btn" target="_blank">
+            <i class="fas fa-download"></i> Resume
+          </a>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div id="canvas-container"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2 class="subtitle">Ruthvik A</h2>
+          <h1 class="title">Aspiring <span class="highlight">Emerging Tech </span>Enthusiast </h1>
+          <p class="description">
+            Motivated tech enthusiast with hands-on experience in cloud infrastructure, IoT systems, and AI-powered
+            applications. Skilled in end-to-end solution development, leveraging tools like AWS, Docker, and React to
+            build scalable and intelligent systems. Known for bridging practical needs with emerging technologies in
+            fast-paced, collaborative environments.
+          </p>
+          <div class="hero-buttons">
+            <button class="primary-btn" data-scroll="contact">Hire Me</button>
+            <button class="secondary-btn copy-email-btn">
+              Copy Gmail <i class="fas fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Update the hero profile section -->
+        <div class="hero-profile">
+          <div class="orbit-container">
+            <!-- Main profile image and glowing circle -->
+            <div class="profile-wrapper">
+              <!-- <div class="glow-circle"></div> -->
+              <div class="profile-image">
+                <img src="rr.jpg" alt="Profile" />
+              </div>
+            </div>
+
+            <!-- Orbiting social icons -->
+
+          </div>
+        </div>
+      </div>
+      <!-- Scroll down indicator -->
+      <div class="scroll-indicator">
+        <button data-scroll="projects">
+          <span>Scroll Down</span>
+          <i class="fas fa-arrow-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience section" id="experience">
+    <div class="section-bg-3d" id="experience-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+        <p class="section-description">
+          My professional journey and the organizations I've contributed to.
+        </p>
+      </div>
+      <div class="experience-grid">
+        <!-- Experience cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education section" id="education">
+    <div class="section-bg-3d" id="education-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Education</span> Background</h2>
+        <p class="section-description">
+          My academic journey that has shaped my knowledge and skills in computer science and technology.
+        </p>
+      </div>
+      <div class="education-grid">
+        <!-- Education cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Hackathons Section -->
+  <section class="hackathons section" id="hackathons">
+    <div class="section-bg-3d" id="hackathons-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Hackathons</span> & Competitions</h2>
+        <p class="section-description">
+          Challenging myself in competitive environments to create innovative solutions under pressure.
+        </p>
+      </div>
+      <div class="hackathons-grid">
+        <!-- Hackathon cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects section" id="projects">
+    <div class="section-bg-3d" id="projects-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+        <p class="section-description">
+          Showcasing my technical skills and problem-solving abilities through real-world applications and
+          innovative solutions.
+        </p>
+      </div>
+      <div class="projects-grid">
+        <!-- Project cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
+    <div class="section-bg-3d" id="skills-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+        <p class="section-description">
+          Core competencies and technologies I've mastered throughout my learning journey.
+        </p>
+      </div>
+      <div class="skills-grid">
+        <!-- Skill cards will be inserted here by JavaScript -->
+      </div>
+
+      <!-- Additional Information -->
+      <div class="additional-info">
+        <!-- Additional info cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="section-bg-3d" id="contact-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+        <p class="section-description">
+          Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="card">
+            <h3 class="card-title">Contact Information</h3>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <p>ruthvikarh@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Phone</h4>
+                  <p>+91 7904321265</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Location</h4>
+                  <p>3rd Stage Banashankari, Bengaluru</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-connect">
+              <h4>Connect with me</h4>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/ruthvik-a-aa59a228a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank" rel="noopener noreferrer" class="social-link">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/ruthvik-172004" target="_blank" rel="noopener noreferrer"
+                  class="social-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:ruthvikarh@gmail.com" class="social-link">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form - Removed as requested -->
+        <div class="contact-info">
+          <div class="card">
+            <h3 class="card-title">Let's Connect</h3>
+            <div class="contact-3d-container" id="contact-3d-scene"></div>
+            <p class="contact-cta">
+              I'm always open to new opportunities and collaborations. Feel free to reach out through any of the contact
+              methods listed.
+            </p>
+            <button class="secondary-btn copy-email-btn">
+              Copy Gmail <i class="fas fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="copyright">
+          © <span id="current-year"></span> Ruthvik A. All rights reserved.
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/ruthvik-a-aa59a228a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank" rel="noopener noreferrer" class="footer-social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/ruthvik-172004" target="_blank" rel="noopener noreferrer"
+            class="footer-social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:ruthvikarh@gmail.com" class="footer-social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal" id="project-modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" id="modal-body">
+        <!-- Modal content will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
