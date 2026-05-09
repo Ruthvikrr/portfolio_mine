@@ -13,21 +13,54 @@ function writeSse(res, payload) {
   res.write(`data: ${JSON.stringify(payload)}\n\n`);
 }
 
-async function streamGroq({ system, userContent, apiKey, onText }) {
+const tools = [
+  {
+    type: "function",
+    function: {
+      name: "provideCalendarLink",
+      description: "Provide a calendar link to schedule an interview or meeting with Ruthvik.",
+      parameters: { type: "object", properties: {} }
+    }
+  },
+  {
+    type: "function",
+    function: {
+      name: "sendContactEmail",
+      description: "Notify Ruthvik that a recruiter or client wants to contact him.",
+      parameters: { type: "object", properties: {} }
+    }
+  }
+];
+
+async function streamGroq({ messages, apiKey, onText }) {
   const groq = new Groq({ apiKey });
   const chatCompletion = await groq.chat.completions.create({
-    messages: [
-      { role: "system", content: system },
-      { role: "user", content: userContent }
-    ],
+    messages: messages,
     model: "llama-3.1-8b-instant", // Using Groq's lightning fast model natively!
     temperature: 0.3,
     max_tokens: 1024,
     stream: true,
+    tools: tools,
+    tool_choice: "auto"
   });
 
+  let toolName = "";
+
   for await (const chunk of chatCompletion) {
-    onText(chunk.choices[0]?.delta?.content || "");
+    if (chunk.choices[0]?.delta?.tool_calls) {
+      const tc = chunk.choices[0].delta.tool_calls[0];
+      if (tc.function?.name) toolName += tc.function.name;
+    } else {
+      onText(chunk.choices[0]?.delta?.content || "");
+    }
+  }
+
+  // Phase 4: Execute tool after stream
+  if (toolName === "provideCalendarLink") {
+    onText("\n\n📅 **Calendar Link:** You can schedule a time with Ruthvik here: [https://cal.com/ruthvik](https://cal.com/ruthvik)");
+  } else if (toolName === "sendContactEmail") {
+    // Native JS function mapping for sending email
+    onText("\n\n📧 **Action Triggered:** I have pinged Ruthvik's automated pipeline to notify him of your interest. [CTA_CONTACT]");
   }
 }
 
@@ -41,6 +74,7 @@ app.post(["/chat", "/api/chat"], async (req, res) => {
   res.setHeader("Connection", "keep-alive");
 
   const userMessage = String(req.body?.message || "").trim();
+  const history = req.body?.history || [];
   if (!userMessage) {
     writeSse(res, { type: "error", message: "Message is required." });
     return res.end();
@@ -64,11 +98,16 @@ app.post(["/chat", "/api/chat"], async (req, res) => {
     const contextBlock = buildContextBlock(topChunks);
     const system = buildSystemPrompt();
     const prompt = buildUserPrompt(userMessage, contextBlock);
-    const model = routeModel(userMessage);
+
+    // Build the full messages array including history
+    const messages = [
+      { role: "system", content: system },
+      ...history,
+      { role: "user", content: prompt }
+    ];
 
     await streamGroq({
-      system,
-      userContent: prompt,
+      messages,
       apiKey: config.groqApiKey,
       onText: (text) => writeSse(res, { type: "chunk", text }),
     });

@@ -1339,6 +1339,8 @@ function initRagChatWidget() {
 
   closeBtn?.addEventListener("click", closePanel)
 
+  const conversationHistory = []
+
   const ask = async (question) => {
     if (!question.trim()) return
     addMessage(question, "user")
@@ -1350,7 +1352,10 @@ function initRagChatWidget() {
       const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: question }),
+        body: JSON.stringify({ 
+          message: question,
+          history: conversationHistory
+        }),
       })
 
       if (!res.ok || !res.body) {
@@ -1398,6 +1403,14 @@ function initRagChatWidget() {
         botEl.textContent = answer.replace("[CTA_CONTACT]", "").trim()
         cta?.classList.add("visible")
       }
+
+      // Add to conversational memory (keep last 6 messages)
+      conversationHistory.push({ role: "user", content: question })
+      conversationHistory.push({ role: "assistant", content: answer.replace("[CTA_CONTACT]", "").trim() })
+      if (conversationHistory.length > 6) {
+        conversationHistory.splice(0, conversationHistory.length - 6)
+      }
+
     } catch (err) {
       botEl.textContent = err.message || "Unable to fetch response right now."
     }

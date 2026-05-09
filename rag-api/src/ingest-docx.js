@@ -90,7 +90,9 @@ function parseFactChunks(paragraphs) {
           content,
         });
       }
-      current = p;
+      // Smart Chunking: 30-word overlap to maintain context across boundaries
+      const overlapWords = current.split(" ").slice(-30).join(" ");
+      current = overlapWords + " " + p;
       currentSection = inferSection(p);
     } else {
       current = `${current} ${p}`.trim();

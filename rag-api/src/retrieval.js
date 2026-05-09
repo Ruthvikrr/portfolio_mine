@@ -10,7 +10,7 @@ let embedderInstance = null;
 
 export async function embedQuery(query) {
   if (!embedderInstance) {
-    embedderInstance = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2");
+    embedderInstance = await pipeline("feature-extraction", "Xenova/bge-small-en-v1.5");
   }
   const result = await embedderInstance(query, { pooling: "mean", normalize: true });
   return Array.from(result.data);

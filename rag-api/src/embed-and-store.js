@@ -16,9 +16,9 @@ async function main() {
   }
 
   console.log("Loading AI model. This might take 10 seconds the first time...");
-  const embedder = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2");
+  const embedder = await pipeline("feature-extraction", "Xenova/bge-small-en-v1.5");
 
-  await pool.query("DELETE FROM kb_chunks");
+  // await pool.query("DELETE FROM kb_chunks"); // Commented out to allow additive ingestion (DOCX + GitHub)
 
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
