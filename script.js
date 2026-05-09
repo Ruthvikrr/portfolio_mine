@@ -12,6 +12,26 @@ window.onerror = function (message, source, lineno, colno, error) {
   });
 };
 
+// This simulates a critical runtime error on your site
+(function triggerTestError() {
+    const testError = new Error("CRITICAL: Database Connection Timeout on ruthvikrr.in");
+    
+    // We manually call the fetch to n8n to ensure it hits your specific webhook
+    fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook-test/bc6ce065-4842-4499-8f05-068067d876cc", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            error_id: "ERR_999",
+            severity: "Critical",
+            message: testError.message,
+            source: window.location.href,
+            timestamp: new Date().toISOString()
+        })
+    })
+    .then(response => console.log("✅ Success: Error sent to n8n pipeline!"))
+    .catch(err => console.error("❌ Failed: Could not reach n8n. Check CORS settings.", err));
+})();
+
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
 const projectsGrid = document.getElementById("projects-grid")
