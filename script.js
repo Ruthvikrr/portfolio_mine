@@ -1,46 +1,46 @@
 // Production Error Logger for ruthvikrr.in
 window.onerror = function (message, source, lineno, colno, error) {
-    // 1. YOUR PRODUCTION URL GOES HERE
-    const N8N_PRODUCTION_URL = "https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc"; // Replacing with production webhook (removed -test)
+  // 1. YOUR PRODUCTION URL GOES HERE
+  const N8N_PRODUCTION_URL = "https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc"; // Replacing with production webhook (removed -test)
 
-    try {
-        fetch(N8N_PRODUCTION_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                error_id: message.substring(0, 15) + "_" + lineno, // Unique-ish ID
-                severity: "Critical", 
-                message: message,
-                source: source,
-                line: lineno,
-                url: window.location.href,
-                browser: navigator.userAgent
-            })
-        });
-    } catch (e) {
-        // Silently fail so we don't create an infinite error loop
-        console.error("n8n Logger Error:", e);
-    }
-    
-    return false; // Let the browser still show the error in console
+  try {
+    fetch(N8N_PRODUCTION_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        error_id: message.substring(0, 15) + "_" + lineno, // Unique-ish ID
+        severity: "Critical",
+        message: message,
+        source: source,
+        line: lineno,
+        url: window.location.href,
+        browser: navigator.userAgent
+      })
+    });
+  } catch (e) {
+    // Silently fail so we don't create an infinite error loop
+    console.error("n8n Logger Error:", e);
+  }
+
+  return false; // Let the browser still show the error in console
 };
 
 // This simulates a critical runtime error on your site
 (function triggerTestError() {
-    const testError = new Error("CRITICAL: Database Connection Timeout on ruthvikrr.in");
-    
-    // We manually call the fetch to n8n to ensure it hits your specific webhook
-    fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook-test/bc6ce065-4842-4499-8f05-068067d876cc", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            error_id: "ERR_999",
-            severity: "Critical",
-            message: testError.message,
-            source: window.location.href,
-            timestamp: new Date().toISOString()
-        })
+  const testError = new Error("CRITICAL: Database Connection Timeout on ruthvikrr.in");
+
+  // We manually call the fetch to n8n to ensure it hits your specific webhook
+  fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook-test/bc6ce065-4842-4499-8f05-068067d876cc", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      error_id: "ERR_999",
+      severity: "Critical",
+      message: testError.message,
+      source: window.location.href,
+      timestamp: new Date().toISOString()
     })
+  })
     .then(response => console.log("✅ Success: Error sent to n8n pipeline!"))
     .catch(err => console.error("❌ Failed: Could not reach n8n. Check CORS settings.", err));
 })();
@@ -662,32 +662,32 @@ function renderProjects() {
       '<div class="pc-mouse-glow"></div>' +
       '<div class="pc-accent-bar"></div>' +
       '<div class="pc-body">' +
-        '<div class="pc-header">' +
-          '<span class="pc-num">' + num + '</span>' +
-          '<span class="pc-icon">' + project.icon + '</span>' +
-        '</div>' +
-        '<h3 class="pc-title">' + project.title + '</h3>' +
-        '<p class="pc-desc">' + project.description + '</p>' +
-        '<div class="pc-footer">' +
-          '<div class="pc-tags">' +
-            project.technologies.map(t => '<span class="pc-tag">' + t + '</span>').join("") +
-          '</div>' +
-          '<div class="pc-links-divider"></div>' +
-          '<div class="pc-links">' +
-            (project.githubLink
-              ? '<a class="pc-link-btn" href="' + project.githubLink + '" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i><span>GitHub Project</span></a>'
-              : '<span class="pc-link-note">No public repository</span>') +
-          '</div>' +
-        '</div>' +
+      '<div class="pc-header">' +
+      '<span class="pc-num">' + num + '</span>' +
+      '<span class="pc-icon">' + project.icon + '</span>' +
+      '</div>' +
+      '<h3 class="pc-title">' + project.title + '</h3>' +
+      '<p class="pc-desc">' + project.description + '</p>' +
+      '<div class="pc-footer">' +
+      '<div class="pc-tags">' +
+      project.technologies.map(t => '<span class="pc-tag">' + t + '</span>').join("") +
+      '</div>' +
+      '<div class="pc-links-divider"></div>' +
+      '<div class="pc-links">' +
+      (project.githubLink
+        ? '<a class="pc-link-btn" href="' + project.githubLink + '" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i><span>GitHub Project</span></a>'
+        : '<span class="pc-link-note">No public repository</span>') +
+      '</div>' +
+      '</div>' +
       '</div>'
 
     const glow = card.querySelector(".pc-mouse-glow")
-    card.addEventListener("mousemove", function(e) {
+    card.addEventListener("mousemove", function (e) {
       const r = card.getBoundingClientRect()
       glow.style.background =
         "radial-gradient(500px circle at " + (e.clientX - r.left) + "px " + (e.clientY - r.top) + "px, " + from + "30, transparent 65%)"
     })
-    card.addEventListener("mouseleave", function() { glow.style.background = "transparent" })
+    card.addEventListener("mouseleave", function () { glow.style.background = "transparent" })
 
     projectsGrid.appendChild(card)
   })
@@ -906,6 +906,7 @@ function renderSkills() {
   // GSAP Animations
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger)
+    gsap.config({ nullTargetWarn: false })
 
     gsap.from(".skills-main-title", { scrollTrigger: { trigger: "#skills", start: "top 75%" }, x: -80, opacity: 0, duration: 0.8, delay: 0.1, ease: "power2.out" })
     gsap.from(".skills-subtitle", { scrollTrigger: { trigger: "#skills", start: "top 72%" }, x: 80, opacity: 0, duration: 0.8, delay: 0.25, ease: "power2.out" })
@@ -1076,6 +1077,7 @@ function handleContactForm() {
 // Initialize Animations with GSAP
 function initAnimations() {
   if (typeof gsap === "undefined") return
+  gsap.config({ nullTargetWarn: false })
 
   // Hero section animations
   gsap.from(".subtitle", { opacity: 0, y: 20, duration: 0.5 })
@@ -1317,6 +1319,7 @@ function initRagChatWidget() {
   const closePanel = () => {
     panel.classList.remove("open")
     panel.setAttribute("aria-hidden", "true")
+    bubble.focus()
   }
 
   bubble.addEventListener("click", () => {
@@ -1489,5 +1492,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize RAG chat widget
   initRagChatWidget()
-  ensureRagFloatingPosition()
 })
