@@ -30,7 +30,7 @@ window.onerror = function (message, source, lineno, colno, error) {
   const testError = new Error("CRITICAL: Database Connection Timeout on ruthvikrr.in");
 
   // We manually call the fetch to n8n to ensure it hits your specific webhook
-  fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook-test/bc6ce065-4842-4499-8f05-068067d876cc", {
+  fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
