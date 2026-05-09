@@ -1,15 +1,28 @@
-// Global Error Handler via webhook
+// Production Error Logger for ruthvikrr.in
 window.onerror = function (message, source, lineno, colno, error) {
-  fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook-test/bc6ce065-4842-4499-8f05-068067d876cc", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      error_id: message,
-      severity: "Critical", 
-      source: source,
-      line: lineno
-    })
-  });
+    // 1. YOUR PRODUCTION URL GOES HERE
+    const N8N_PRODUCTION_URL = "https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc"; // Replacing with production webhook (removed -test)
+
+    try {
+        fetch(N8N_PRODUCTION_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                error_id: message.substring(0, 15) + "_" + lineno, // Unique-ish ID
+                severity: "Critical", 
+                message: message,
+                source: source,
+                line: lineno,
+                url: window.location.href,
+                browser: navigator.userAgent
+            })
+        });
+    } catch (e) {
+        // Silently fail so we don't create an infinite error loop
+        console.error("n8n Logger Error:", e);
+    }
+    
+    return false; // Let the browser still show the error in console
 };
 
 // This simulates a critical runtime error on your site
