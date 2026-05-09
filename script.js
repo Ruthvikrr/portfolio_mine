@@ -1,3 +1,17 @@
+// Global Error Handler via webhook
+window.onerror = function (message, source, lineno, colno, error) {
+  fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook-test/bc6ce065-4842-4499-8f05-068067d876cc", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      error_id: message,
+      severity: "Critical", 
+      source: source,
+      line: lineno
+    })
+  });
+};
+
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
 const projectsGrid = document.getElementById("projects-grid")
