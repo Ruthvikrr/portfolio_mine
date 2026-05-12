@@ -52,6 +52,13 @@ function triggerN8nTest(type, level, msg) {
     sendToN8n({ name: type, severity: level, message: msg });
 }
 
+// 4. Automated Live Simulation (Triggers a safe console error 3 seconds after page load)
+setTimeout(() => {
+    // This throws an unhandled error into the console, simulating a frontend component crash
+    // Because it runs inside setTimeout, it will NOT break or stop the rest of your website from working!
+    throw new Error("Simulated Frontend Component Failure for n8n Webhook Testing");
+}, 3000);
+
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
 const projectsGrid = document.getElementById("projects-grid")
