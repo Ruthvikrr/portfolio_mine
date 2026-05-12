@@ -1,35 +1,31 @@
-const webhook = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
+const N8N_WEBHOOK_URL = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
 
-// For Page Views (Run this on window load)
+// Unified helper function for n8n Aggregate node
+async function notifyN8n(eventType, severity, details) {
+    try {
+        await fetch(N8N_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_type: eventType,
+                severity: severity,
+                details: details
+            })
+        });
+    } catch (e) {
+        console.error("n8n notify error:", e);
+    }
+}
+
+// For "Someone is viewing"
 window.addEventListener('load', () => {
-  fetch(webhook, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      event_type: "Page View",
-      severity: "Low",
-      details: "Someone is looking at your site!"
-    })
-  }).catch(e => console.error("n8n View log error:", e));
+    notifyN8n("Page View", "Low", "User is on the site.");
 });
 
-// For Errors (Add this to your error handler)
+// For "Error"
 window.onerror = function (message) {
-  fetch(webhook, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      event_type: "Site Error",
-      severity: "Critical",
-      details: "The database connection failed."
-    })
-  }).catch(e => console.error("n8n Error log error:", e));
+    notifyN8n("Site Error", "Critical", "Database Timeout");
 };
-
-// Small Live Console Error Demonstration to automatically trigger window.onerror verification
-setTimeout(() => {
-    triggerNonExistentFunction();
-}, 2000);
 
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
