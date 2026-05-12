@@ -52,19 +52,14 @@ function triggerN8nTest(type, level, msg) {
     sendToN8n({ name: type, severity: level, message: msg });
 }
 
-// 4. Automated Live Simulation: Specific JSON Block Trigger
-fetch('https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    site_name: "ruthvikrr.in",
-    error_type: "Database Timeout",
-    severity: "Critical",
-    details: "The connection to PostgreSQL failed after 30s."
-  })
-})
-.then(() => console.log("✅ Success: Specific JSON error block sent to n8n pipeline!"))
-.catch(err => console.error("❌ Failed to send specific JSON block to n8n:", err));
+// 4. Small Live Console Error Demonstration
+// Deliberately calling an undefined variable inside setTimeout to cause a native console error
+// without breaking or stopping the rest of the website from running normally.
+setTimeout(() => {
+    // This will throw a real ReferenceError in red in your browser console
+    // causing window.onerror to automatically intercept and log it to n8n!
+    triggerNonExistentFunction();
+}, 2000);
 
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
