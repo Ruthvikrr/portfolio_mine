@@ -52,12 +52,19 @@ function triggerN8nTest(type, level, msg) {
     sendToN8n({ name: type, severity: level, message: msg });
 }
 
-// 4. Automated Live Simulation (Triggers a safe console error 3 seconds after page load)
-setTimeout(() => {
-    // This throws an unhandled error into the console, simulating a frontend component crash
-    // Because it runs inside setTimeout, it will NOT break or stop the rest of your website from working!
-    throw new Error("Simulated Frontend Component Failure for n8n Webhook Testing");
-}, 3000);
+// 4. Automated Live Simulation: Specific JSON Block Trigger
+fetch('https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    site_name: "ruthvikrr.in",
+    error_type: "Database Timeout",
+    severity: "Critical",
+    details: "The connection to PostgreSQL failed after 30s."
+  })
+})
+.then(() => console.log("✅ Success: Specific JSON error block sent to n8n pipeline!"))
+.catch(err => console.error("❌ Failed to send specific JSON block to n8n:", err));
 
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
