@@ -1,49 +1,56 @@
-// Production Error Logger for ruthvikrr.in
+// Configuration: Replace with your actual n8n Webhook URL
+const N8N_WEBHOOK_URL = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
+
+/**
+ * Function to send logs to n8n
+ */
+async function sendToN8n(errorData) {
+    try {
+        const response = await fetch(N8N_WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                error_type: errorData.name || "Site Error",
+                severity: errorData.severity || "Medium",
+                details: errorData.message || "No message provided",
+                url: window.location.href,
+                timestamp: new Date().toISOString()
+            }),
+        });
+        
+        if (response.ok) {
+            console.log("✅ Success: Error sent to n8n pipeline!");
+        }
+    } catch (e) {
+        console.error("❌ Failed to send to n8n:", e);
+    }
+}
+
+// 1. Capture Uncaught Javascript Errors
 window.onerror = function (message, source, lineno, colno, error) {
-  // 1. YOUR PRODUCTION URL GOES HERE
-  const N8N_PRODUCTION_URL = "https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc"; // Replacing with production webhook (removed -test)
-
-  try {
-    fetch(N8N_PRODUCTION_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        error_id: message.substring(0, 15) + "_" + lineno, // Unique-ish ID
-        severity: "Critical",
-        message: message,
-        source: source,
-        line: lineno,
-        url: window.location.href,
-        browser: navigator.userAgent
-      })
+    sendToN8n({
+        name: error ? error.name : "Uncaught Error",
+        severity: "High",
+        message: `${message} at ${source}:${lineno}:${colno}`
     });
-  } catch (e) {
-    // Silently fail so we don't create an infinite error loop
-    console.error("n8n Logger Error:", e);
-  }
-
-  return false; // Let the browser still show the error in console
 };
 
-// This simulates a critical runtime error on your site
-(function triggerTestError() {
-  const testError = new Error("CRITICAL: Database Connection Timeout on ruthvikrr.in");
+// 2. Capture Unhandled Promise Rejections (API failures, etc.)
+window.onunhandledrejection = function (event) {
+    sendToN8n({
+        name: "Promise Rejection",
+        severity: "Critical",
+        message: event.reason ? event.reason.message : "Async call failed"
+    });
+};
 
-  // We manually call the fetch to n8n to ensure it hits your specific webhook
-  fetch("https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      error_id: "ERR_999",
-      severity: "Critical",
-      message: testError.message,
-      source: window.location.href,
-      timestamp: new Date().toISOString()
-    })
-  })
-    .then(response => console.log("✅ Success: Error sent to n8n pipeline!"))
-    .catch(err => console.error("❌ Failed: Could not reach n8n. Check CORS settings.", err));
-})();
+// 3. Manual Trigger (Use this for testing)
+// Example: triggerN8nTest("ERR_999", "Critical", "Database Timeout");
+function triggerN8nTest(type, level, msg) {
+    sendToN8n({ name: type, severity: level, message: msg });
+}
 
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
