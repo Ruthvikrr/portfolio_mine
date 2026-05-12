@@ -18,7 +18,7 @@ const tools = [
     type: "function",
     function: {
       name: "provideCalendarLink",
-      description: "Provide a calendar link to schedule an interview or meeting with Ruthvik.",
+      description: "ONLY call this if the user EXPLICITLY asks to schedule an interview, book a meeting, or set up a call with you.",
       parameters: { type: "object", properties: {} }
     }
   },
@@ -26,7 +26,7 @@ const tools = [
     type: "function",
     function: {
       name: "sendContactEmail",
-      description: "Notify Ruthvik that a recruiter or client wants to contact him.",
+      description: "ONLY call this if the user EXPLICITLY says they want to hire you, contact you via email, or want your email address to reach out.",
       parameters: { type: "object", properties: {} }
     }
   }
@@ -57,10 +57,10 @@ async function streamGroq({ messages, apiKey, onText }) {
 
   // Phase 4: Execute tool after stream
   if (toolName === "provideCalendarLink") {
-    onText("\n\n📅 **Calendar Link:** You can schedule a time with Ruthvik here: [https://cal.com/ruthvik](https://cal.com/ruthvik)");
+    onText("\n\n📅 **Calendar Link:** You can schedule a time with me here: [https://cal.com/ruthvik](https://cal.com/ruthvik)");
   } else if (toolName === "sendContactEmail") {
     // Native JS function mapping for sending email
-    onText("\n\n📧 **Action Triggered:** I have pinged Ruthvik's automated pipeline to notify him of your interest. [CTA_CONTACT]");
+    onText("\n\n📧 **Action Triggered:** I've pinged my automated pipeline to notify me of your interest! [CTA_CONTACT]");
   }
 }
 

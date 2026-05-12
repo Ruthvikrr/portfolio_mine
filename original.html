@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keerthana B V — Full Stack Developer</title>
+    <title>Ruthvik A — Full Stack Developer</title>
     <meta name="description"
         content="Full Stack Developer · React · Node.js · Applied AI · 8+ Production Apps Shipped" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -209,7 +209,7 @@
             width: 13px;
             height: 13px;
         }
-        
+
         /* Brand Icons */
         .brand-icon {
             fill: currentColor;
@@ -217,14 +217,21 @@
             height: 32px;
             transition: transform 0.2s var(--ease);
         }
-        
-        .brand-icon.github { color: #181717 !important; }
-        .brand-icon.linkedin { color: #0077B5 !important; }
-        
+
+        .brand-icon.github {
+            color: #181717 !important;
+        }
+
+        .brand-icon.linkedin {
+            color: #0077B5 !important;
+        }
+
         /* White github icon for dark sections */
         .contact-section .brand-icon.github,
-        #chat-drawer .brand-icon.github { color: #fff; }
-        
+        #chat-drawer .brand-icon.github {
+            color: #fff;
+        }
+
         .contact-link-item:hover .brand-icon {
             transform: scale(1.15);
         }
@@ -734,7 +741,8 @@
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
-            flex-grow: 1; /* Take up space to allow right-alignment */
+            flex-grow: 1;
+            /* Take up space to allow right-alignment */
         }
 
         .ptitle {
@@ -854,7 +862,11 @@
             color: var(--text);
         }
 
-        .edec, .e-problem, .e-solution, .e-decision, .e-result {
+        .edec,
+        .e-problem,
+        .e-solution,
+        .e-decision,
+        .e-result {
             padding: 16px;
             border-radius: 0 8px 8px 0;
             border-left: 3px solid transparent;
@@ -864,25 +876,39 @@
             background: rgba(220, 38, 38, 0.05);
             border-left-color: #dc2626;
         }
-        .e-problem .ebl { color: #dc2626; }
+
+        .e-problem .ebl {
+            color: #dc2626;
+        }
 
         .e-solution {
             background: rgba(22, 163, 74, 0.05);
             border-left-color: #16a34a;
         }
-        .e-solution .ebl { color: #16a34a; }
 
-        .e-decision, .edec {
+        .e-solution .ebl {
+            color: #16a34a;
+        }
+
+        .e-decision,
+        .edec {
             background: rgba(37, 99, 235, 0.05);
             border-left-color: #2563eb;
         }
-        .e-decision .ebl, .edec .ebl { color: #2563eb; }
+
+        .e-decision .ebl,
+        .edec .ebl {
+            color: #2563eb;
+        }
 
         .e-result {
             background: rgba(217, 119, 6, 0.05);
             border-left-color: #d97706;
         }
-        .e-result .ebl { color: #d97706; }
+
+        .e-result .ebl {
+            color: #d97706;
+        }
 
         .erl {
             display: inline-flex;
@@ -1502,23 +1528,41 @@
         /* ═══════════════════════════════════════
    CHAT WIDGET
 ═══════════════════════════════════════ */
-        #chat-drawer { 
-            transform: translateY(120%); 
-            transition: transform 200ms ease-out; 
+        #chat-drawer {
+            transform: translateY(120%);
+            transition: transform 200ms ease-out;
         }
-        #chat-drawer.open { 
-            transform: translateY(0); 
+
+        #chat-drawer.open {
+            transform: translateY(0);
         }
-        
-        .loading-dots:after { 
-            content: '.'; 
-            animation: dots 1.5s steps(4, end) infinite; 
+
+        .loading-dots:after {
+            content: '.';
+            animation: dots 1.5s steps(4, end) infinite;
         }
+
         @keyframes dots {
-            0%, 20% { color: rgba(0,0,0,0); text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);}
-            40% { color: #0F0F0F; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);}
-            60% { text-shadow: .25em 0 0 #0F0F0F, .5em 0 0 rgba(0,0,0,0);}
-            80%, 100% { text-shadow: .25em 0 0 #0F0F0F, .5em 0 0 #0F0F0F;}
+
+            0%,
+            20% {
+                color: rgba(0, 0, 0, 0);
+                text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+            }
+
+            40% {
+                color: #0F0F0F;
+                text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+            }
+
+            60% {
+                text-shadow: .25em 0 0 #0F0F0F, .5em 0 0 rgba(0, 0, 0, 0);
+            }
+
+            80%,
+            100% {
+                text-shadow: .25em 0 0 #0F0F0F, .5em 0 0 #0F0F0F;
+            }
         }
 
         /* ═══════════════════════════════════════
@@ -1675,14 +1719,15 @@
                 padding-right: 40px;
                 width: 100%;
             }
-            
+
             .ptitle {
                 font-size: 19px;
                 line-height: 1.3;
-                width: 100%; /* Force title to its own line if long, but allow badge/link next to each other */
+                width: 100%;
+                /* Force title to its own line if long, but allow badge/link next to each other */
                 margin-bottom: 4px;
             }
-            
+
             .badge {
                 font-size: 9px;
                 padding: 2px 8px;
@@ -1696,7 +1741,7 @@
                 margin-top: 0;
             }
 
-            .pst > div:last-child {
+            .pst>div:last-child {
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -1718,12 +1763,12 @@
                 top: 0;
                 margin-bottom: 32px;
             }
-            
+
             .exploring-group {
                 padding: 20px;
             }
         }
-        
+
         /* Project View Link */
         .pvp {
             display: inline-flex;
@@ -1740,23 +1785,26 @@
             background: var(--accent-bg);
             transition: all 0.2s var(--ease);
             white-space: nowrap;
-            margin-left: auto; /* Push to right */
+            margin-left: auto;
+            /* Push to right */
         }
-        
+
         @media (max-width: 600px) {
             .pvp {
                 padding: 4px 10px;
                 font-size: 11px;
-                margin-left: 0; /* Let it wrap naturally on extreme small screens if needed */
+                margin-left: 0;
+                /* Let it wrap naturally on extreme small screens if needed */
             }
         }
-        
+
         .pvp:hover {
             background: var(--accent);
             color: #fff;
             transform: translateY(-1px);
             box-shadow: var(--shadow-sm);
         }
+
         /* Currently Exploring - Unique Style */
         .exploring-group {
             margin-top: 40px;
@@ -1767,7 +1815,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .exploring-group::before {
             content: "";
             position: absolute;
@@ -1779,7 +1827,7 @@
             pointer-events: none;
             opacity: 0.5;
         }
-        
+
         .exploring-title {
             display: flex;
             align-items: center;
@@ -1792,7 +1840,7 @@
             color: var(--accent);
             margin-bottom: 20px;
         }
-        
+
         .exploring-dot {
             width: 8px;
             height: 8px;
@@ -1801,19 +1849,31 @@
             box-shadow: 0 0 10px var(--accent);
             animation: pulse-glow 2s infinite;
         }
-        
+
         @keyframes pulse-glow {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 20px var(--accent); }
-            100% { transform: scale(1); opacity: 0.8; }
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.4);
+                opacity: 1;
+                box-shadow: 0 0 20px var(--accent);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
         }
-        
+
         .exploring-chips {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
-        
+
         .exploring-chip {
             font-family: var(--mono);
             font-size: 13px;
@@ -1826,7 +1886,7 @@
             transition: all 0.3s var(--ease);
             backdrop-filter: blur(5px);
         }
-        
+
         .exploring-chip:hover {
             background: var(--accent);
             color: #fff;
@@ -1851,7 +1911,10 @@
         </ul>
         <div class="nav-right">
             <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" class="nav-github">
-                <svg class="brand-icon github" style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <svg class="brand-icon github" style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
                 GitHub
             </a>
             <a href="mailto:keerthana.b.v.codes@gmail.com" class="nav-cta">Hire Me</a>
@@ -2000,66 +2063,112 @@
                 <!-- P1 -->
                 <div class="pc reveal d1">
                     <div class="pscan" onclick="toggleProject(this)">
-                    <div class="pst">
-                        <div class="ptr">
-                            <span class="ptitle">AI-Powered Legal Document Analysis</span>
-                            <span class="badge bg">Research · Production</span>
-                            <a href="https://github.com/keerthana-b-v/AI-Powered-Legal-Document-Analysis-with-an-Integrated-Trust-and-Safety-Framework-" target="_blank" rel="noopener" class="pvp" onclick="event.stopPropagation()">
-                                View Project
-                                <svg class="brand-icon github" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            </a>
+                        <div class="pst">
+                            <div class="ptr">
+                                <span class="ptitle">AI-Powered Legal Document Analysis</span>
+                                <span class="badge bg">Research · Production</span>
+                                <a href="https://github.com/keerthana-b-v/AI-Powered-Legal-Document-Analysis-with-an-Integrated-Trust-and-Safety-Framework-"
+                                    target="_blank" rel="noopener" class="pvp" onclick="event.stopPropagation()">
+                                    View Project
+                                    <svg class="brand-icon github" style="width:14px;height:14px;" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <span class="etog open">+</span>
                         </div>
-                        <span class="etog open">+</span>
-                    </div>
-                    <p class="poc">84.9% F1-score on 510 legal contracts · Presented at NCRIE-2025</p>
-                    <div class="pstack">
-                        <span class="tp">React.js</span>
-                        <span class="tp">Node.js</span>
-                        <span class="tp">BERT</span>
-                        <span class="tp">Python</span>
-                        <span class="tp">OpenAI API</span>
-                    </div>
+                        <p class="poc">84.9% F1-score on 510 legal contracts · Presented at NCRIE-2025</p>
+                        <div class="pstack">
+                            <span class="tp">React.js</span>
+                            <span class="tp">Node.js</span>
+                            <span class="tp">BERT</span>
+                            <span class="tp">Python</span>
+                            <span class="tp">OpenAI API</span>
+                        </div>
                     </div>
                     <div class="pexp open">
-                    <div class="pexi">
-                        <div class="e-problem"><p class="ebl">Problem</p><p class="ebt">Legal teams spend hours manually reviewing contracts for risk clauses — no consistency, no audit trail, no scale.</p></div>
-                        <div class="e-solution"><p class="ebl">What I Built</p><p class="ebt">Full-stack MERN app for real-time AI-driven clause extraction from PDFs and Word documents. Fine-tuned BERT with OpenAI API to produce plain-language risk summaries. Trust & Safety module includes PII redaction and live fairness auditing.</p></div>
-                        <div class="e-decision"><p class="ebl">Key Engineering Decision</p><p class="ebt">Fine-tuned BERT on the CUAD benchmark instead of relying on prompt engineering alone — because 84.9% F1 is a number you can defend in a paper and in production. Measurable over impressive.</p></div>
-                        <div class="e-result"><p class="ebl">Result</p><p class="ebt" style="font-weight:500">84.9% F1, 84.7% accuracy on CUAD (510 legal contracts). Research paper presented at NCRIE-2025, KSIT — Best Paper Presentation Award.</p></div>
-                    </div>
+                        <div class="pexi">
+                            <div class="e-problem">
+                                <p class="ebl">Problem</p>
+                                <p class="ebt">Legal teams spend hours manually reviewing contracts for risk clauses —
+                                    no consistency, no audit trail, no scale.</p>
+                            </div>
+                            <div class="e-solution">
+                                <p class="ebl">What I Built</p>
+                                <p class="ebt">Full-stack MERN app for real-time AI-driven clause extraction from PDFs
+                                    and Word documents. Fine-tuned BERT with OpenAI API to produce plain-language risk
+                                    summaries. Trust & Safety module includes PII redaction and live fairness auditing.
+                                </p>
+                            </div>
+                            <div class="e-decision">
+                                <p class="ebl">Key Engineering Decision</p>
+                                <p class="ebt">Fine-tuned BERT on the CUAD benchmark instead of relying on prompt
+                                    engineering alone — because 84.9% F1 is a number you can defend in a paper and in
+                                    production. Measurable over impressive.</p>
+                            </div>
+                            <div class="e-result">
+                                <p class="ebl">Result</p>
+                                <p class="ebt" style="font-weight:500">84.9% F1, 84.7% accuracy on CUAD (510 legal
+                                    contracts). Research paper presented at NCRIE-2025, KSIT — Best Paper Presentation
+                                    Award.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- P2 -->
                 <div class="pc reveal d2">
                     <div class="pscan" onclick="toggleProject(this)">
-                    <div class="pst">
-                        <div class="ptr">
-                            <span class="ptitle">Full-Stack HRMS</span>
-                            <span class="badge bg">Production</span>
-                            <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" class="pvp" onclick="event.stopPropagation()">
-                                View Project
-                                <svg class="brand-icon github" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            </a>
+                        <div class="pst">
+                            <div class="ptr">
+                                <span class="ptitle">Full-Stack HRMS</span>
+                                <span class="badge bg">Production</span>
+                                <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" class="pvp"
+                                    onclick="event.stopPropagation()">
+                                    View Project
+                                    <svg class="brand-icon github" style="width:14px;height:14px;" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <span class="etog">+</span>
                         </div>
-                        <span class="etog">+</span>
-                    </div>
-                    <p class="poc">Replaced paper workflows across 4 departments · Live with real clients</p>
-                    <div class="pstack">
-                        <span class="tp">React.js</span>
-                        <span class="tp">Python Flask</span>
-                        <span class="tp">PostgreSQL</span>
-                        <span class="tp">SQLAlchemy</span>
-                        <span class="tp">JWT</span>
-                    </div>
+                        <p class="poc">Replaced paper workflows across 4 departments · Live with real clients</p>
+                        <div class="pstack">
+                            <span class="tp">React.js</span>
+                            <span class="tp">Python Flask</span>
+                            <span class="tp">PostgreSQL</span>
+                            <span class="tp">SQLAlchemy</span>
+                            <span class="tp">JWT</span>
+                        </div>
                     </div>
                     <div class="pexp">
-                    <div class="pexi">
-                        <div class="e-problem"><p class="ebl">Problem</p><p class="ebt">A client's HR team tracked attendance, onboarding, and leave on paper — slow, inconsistent, unscalable.</p></div>
-                        <div class="e-solution"><p class="ebl">What I Built</p><p class="ebt">React.js frontend + Python Flask API + PostgreSQL. RBAC with PyJWT and bcrypt — strict data isolation across Admin, HR, Manager, and Employee portals. Recharts dashboards for real-time analytics.</p></div>
-                        <div class="e-decision"><p class="ebl">Key Engineering Decision</p><p class="ebt">PostgreSQL over MongoDB — HR data is inherently relational. Leave records reference users who belong to departments with policies. Referential integrity matters more than document flexibility.</p></div>
-                        <div class="e-result"><p class="ebl">Result</p><p class="ebt" style="font-weight:500">Deployed in production. Replaced paper-based workflows across 4 departments. Serving real clients.</p></div>
-                    </div>
+                        <div class="pexi">
+                            <div class="e-problem">
+                                <p class="ebl">Problem</p>
+                                <p class="ebt">A client's HR team tracked attendance, onboarding, and leave on paper —
+                                    slow, inconsistent, unscalable.</p>
+                            </div>
+                            <div class="e-solution">
+                                <p class="ebl">What I Built</p>
+                                <p class="ebt">React.js frontend + Python Flask API + PostgreSQL. RBAC with PyJWT and
+                                    bcrypt — strict data isolation across Admin, HR, Manager, and Employee portals.
+                                    Recharts dashboards for real-time analytics.</p>
+                            </div>
+                            <div class="e-decision">
+                                <p class="ebl">Key Engineering Decision</p>
+                                <p class="ebt">PostgreSQL over MongoDB — HR data is inherently relational. Leave records
+                                    reference users who belong to departments with policies. Referential integrity
+                                    matters more than document flexibility.</p>
+                            </div>
+                            <div class="e-result">
+                                <p class="ebl">Result</p>
+                                <p class="ebt" style="font-weight:500">Deployed in production. Replaced paper-based
+                                    workflows across 4 departments. Serving real clients.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2068,33 +2177,55 @@
                 <!-- P3 -->
                 <div class="pc reveal d3">
                     <div class="pscan" onclick="toggleProject(this)">
-                    <div class="pst">
-                        <div class="ptr">
-                            <span class="ptitle">XAI Clinical Decision Support</span>
-                            <span class="badge bgy">Academic · 2024–2025</span>
-                            <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" class="pvp" onclick="event.stopPropagation()">
-                                View Project
-                                <svg class="brand-icon github" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            </a>
+                        <div class="pst">
+                            <div class="ptr">
+                                <span class="ptitle">XAI Clinical Decision Support</span>
+                                <span class="badge bgy">Academic · 2024–2025</span>
+                                <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" class="pvp"
+                                    onclick="event.stopPropagation()">
+                                    View Project
+                                    <svg class="brand-icon github" style="width:14px;height:14px;" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <span class="etog">+</span>
                         </div>
-                        <span class="etog">+</span>
-                    </div>
-                    <p class="poc">Dual SHAP + LIME explanation layer · Quantitative confidence scoring</p>
-                    <div class="pstack">
-                        <span class="tag">Python</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">SHAP</span>
-                        <span class="tag">LIME</span>
-                        <span class="tag">scikit-learn</span>
-                    </div>
+                        <p class="poc">Dual SHAP + LIME explanation layer · Quantitative confidence scoring</p>
+                        <div class="pstack">
+                            <span class="tag">Python</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">SHAP</span>
+                            <span class="tag">LIME</span>
+                            <span class="tag">scikit-learn</span>
+                        </div>
                     </div>
                     <div class="pexp">
-                    <div class="pexi">
-                        <div class="e-problem"><p class="ebl">Problem</p><p class="ebt">Black-box ML in clinical settings is a liability — clinicians won't act on outputs they can't understand or verify.</p></div>
-                        <div class="e-solution"><p class="ebl">What I Built</p><p class="ebt">Streamlit dashboard predicting heart disease risk with SHAP and LIME visualizations side-by-side. Comparison module generates confidence scores based on explanation method agreement.</p></div>
-                        <div class="e-decision"><p class="ebl">Key Engineering Decision</p><p class="ebt">Both SHAP and LIME instead of one — where they agree, the prediction is trustworthy; where they diverge, the clinician investigates. That's a safety model, not a UI choice.</p></div>
-                        <div class="e-result"><p class="ebl">Result</p><p class="ebt" style="font-weight:500">Quantitative XAI consistency scoring. Confidence-scored clinical decisions without sacrificing interpretability.</p></div>
-                    </div>
+                        <div class="pexi">
+                            <div class="e-problem">
+                                <p class="ebl">Problem</p>
+                                <p class="ebt">Black-box ML in clinical settings is a liability — clinicians won't act
+                                    on outputs they can't understand or verify.</p>
+                            </div>
+                            <div class="e-solution">
+                                <p class="ebl">What I Built</p>
+                                <p class="ebt">Streamlit dashboard predicting heart disease risk with SHAP and LIME
+                                    visualizations side-by-side. Comparison module generates confidence scores based on
+                                    explanation method agreement.</p>
+                            </div>
+                            <div class="e-decision">
+                                <p class="ebl">Key Engineering Decision</p>
+                                <p class="ebt">Both SHAP and LIME instead of one — where they agree, the prediction is
+                                    trustworthy; where they diverge, the clinician investigates. That's a safety model,
+                                    not a UI choice.</p>
+                            </div>
+                            <div class="e-result">
+                                <p class="ebl">Result</p>
+                                <p class="ebt" style="font-weight:500">Quantitative XAI consistency scoring.
+                                    Confidence-scored clinical decisions without sacrificing interpretability.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2219,7 +2350,11 @@
                     <div class="research-links">
                         <a href="https://github.com/keerthana-b-v/AI-Powered-Legal-Document-Analysis-with-an-Integrated-Trust-and-Safety-Framework-"
                             target="_blank" rel="noopener" class="research-link primary">
-                            <svg class="brand-icon github" style="width:16px;height:16px;margin-right:8px;" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <svg class="brand-icon github" style="width:16px;height:16px;margin-right:8px;"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
                             View on GitHub
                         </a>
                         <a href="https://drive.google.com/file/d/1nPK1FBLpzKAEEKXouHAY0RT9Fjy8UlK3/view" target="_blank"
@@ -2310,16 +2445,27 @@
                             <div class="about-meta-item">
                                 <div class="about-meta-label">Find Me</div>
                                 <div class="about-meta-value">
-                                    <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#181717;text-decoration:none;">
-                                        <svg class="brand-icon" style="width:20px;height:20px;color:#181717;" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                    <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener"
+                                        style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#181717;text-decoration:none;">
+                                        <svg class="brand-icon" style="width:20px;height:20px;color:#181717;"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                        </svg>
                                         GitHub
                                     </a>
                                     ·
-                                    <a href="https://www.linkedin.com/in/keerthana-b-v" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#0077B5;text-decoration:none;">
-                                        <svg class="brand-icon" style="width:20px;height:20px;color:#0077B5;" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                    <a href="https://www.linkedin.com/in/keerthana-b-v" target="_blank" rel="noopener"
+                                        style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#0077B5;text-decoration:none;">
+                                        <svg class="brand-icon" style="width:20px;height:20px;color:#0077B5;"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                        </svg>
                                         LinkedIn
                                     </a> ·
-                                    <a href="https://blog.keerthanabv.in" target="_blank" rel="noopener" style="font-weight:600;font-size:16px;color:var(--text);text-decoration:none;">Blog</a>
+                                    <a href="https://blog.keerthanabv.in" target="_blank" rel="noopener"
+                                        style="font-weight:600;font-size:16px;color:var(--text);text-decoration:none;">Blog</a>
                                 </div>
                             </div>
                             <div class="about-meta-divider"></div>
@@ -2337,9 +2483,11 @@
                     <div
                         style="font-family:var(--display);font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;">
                         Best Paper Presentation</div>
-                    <div style="font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:12px;">NCRIE-2025 · KSIT,
+                    <div style="font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:12px;">NCRIE-2025 ·
+                        KSIT,
                         Bengaluru<br />National Conference on Recent Innovations in Engineering</div>
-                    <a href="https://drive.google.com/file/d/1nPK1FBLpzKAEEKXouHAY0RT9Fjy8UlK3/view" target="_blank" rel="noopener" class="erl">View Certificate →</a>
+                    <a href="https://drive.google.com/file/d/1nPK1FBLpzKAEEKXouHAY0RT9Fjy8UlK3/view" target="_blank"
+                        rel="noopener" class="erl">View Certificate →</a>
                 </div>
                 <div class="about-card reveal d3">
                     <div class="mini-card-label">Certification</div>
@@ -2371,12 +2519,18 @@
                 </a>
                 <div class="contact-links-row">
                     <a href="https://github.com/keerthana-b-v" target="_blank" rel="noopener" class="contact-link-item">
-                        <svg class="brand-icon github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        <svg class="brand-icon github" viewBox="0 0 24 24">
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
                         <span class="contact-link-label">GitHub</span>
                     </a>
                     <a href="https://www.linkedin.com/in/keerthana-b-v" target="_blank" rel="noopener"
                         class="contact-link-item">
-                        <svg class="brand-icon linkedin" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <svg class="brand-icon linkedin" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
                         <span class="contact-link-label">LinkedIn</span>
                     </a>
                     <a href="https://blog.keerthanabv.in" target="_blank" rel="noopener" class="contact-link-item">
@@ -2399,35 +2553,50 @@
 
     <!-- CHAT WIDGET -->
     <div class="fixed bottom-[24px] right-[24px] z-[70] flex items-end gap-3 pointer-events-none">
-        <div id="chat-tooltip" class="hidden md:flex bg-white border border-brand-border text-brand-text shadow-sm text-[13px] font-medium px-4 py-2 rounded-[8px] mb-2 opacity-0 transition-opacity duration-300">
+        <div id="chat-tooltip"
+            class="hidden md:flex bg-white border border-brand-border text-brand-text shadow-sm text-[13px] font-medium px-4 py-2 rounded-[8px] mb-2 opacity-0 transition-opacity duration-300">
             Ask about my work &rarr;
         </div>
-        
-        <button id="chat-trigger" class="w-[52px] h-[52px] bg-brand-accent rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#E63E00] transition-colors pointer-events-auto" aria-label="Open Chat">
+
+        <button id="chat-trigger"
+            class="w-[52px] h-[52px] bg-brand-accent rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#E63E00] transition-colors pointer-events-auto"
+            aria-label="Open Chat">
             <i data-lucide="message-square-plus" id="chat-icon-open" class="w-6 h-6"></i>
             <i data-lucide="x" id="chat-icon-close" class="hidden w-6 h-6"></i>
         </button>
     </div>
 
     <!-- CHAT DRAWER -->
-    <div id="chat-drawer" class="fixed bottom-0 right-0 md:right-[24px] md:bottom-[90px] w-full md:w-[360px] h-[70vh] md:h-[480px] bg-white border border-brand-border rounded-t-[12px] md:rounded-[12px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[65] flex flex-col hidden">
+    <div id="chat-drawer"
+        class="fixed bottom-0 right-0 md:right-[24px] md:bottom-[90px] w-full md:w-[360px] h-[70vh] md:h-[480px] bg-white border border-brand-border rounded-t-[12px] md:rounded-[12px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[65] flex flex-col hidden">
         <div class="flex items-center justify-between px-4 py-3 border-b border-brand-border bg-white rounded-t-[12px]">
             <div class="font-medium text-[14px] text-brand-text">Ask about Keerthana's work</div>
-            <button id="chat-close" aria-label="Close Chat" class="text-brand-muted hover:text-brand-text"><i data-lucide="x" class="w-[18px] h-[18px]"></i></button>
+            <button id="chat-close" aria-label="Close Chat" class="text-brand-muted hover:text-brand-text"><i
+                    data-lucide="x" class="w-[18px] h-[18px]"></i></button>
         </div>
-        
+
         <div id="chat-messages" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3 text-[14px]">
             <div id="chat-suggestions" class="flex flex-col gap-2 mt-auto">
-                <button class="chat-chip text-left bg-white text-brand-text text-[13px] border border-brand-border px-3 py-2.5 rounded-[8px] hover:border-brand-accent transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.02)]">What stack does she work with?</button>
-                <button class="chat-chip text-left bg-white text-brand-text text-[13px] border border-brand-border px-3 py-2.5 rounded-[8px] hover:border-brand-accent transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.02)]">Has she deployed to production?</button>
-                <button class="chat-chip text-left bg-white text-brand-text text-[13px] border border-brand-border px-3 py-2.5 rounded-[8px] hover:border-brand-accent transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.02)]">Tell me about her AI experience</button>
+                <button
+                    class="chat-chip text-left bg-white text-brand-text text-[13px] border border-brand-border px-3 py-2.5 rounded-[8px] hover:border-brand-accent transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.02)]">What
+                    stack does she work with?</button>
+                <button
+                    class="chat-chip text-left bg-white text-brand-text text-[13px] border border-brand-border px-3 py-2.5 rounded-[8px] hover:border-brand-accent transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.02)]">Has
+                    she deployed to production?</button>
+                <button
+                    class="chat-chip text-left bg-white text-brand-text text-[13px] border border-brand-border px-3 py-2.5 rounded-[8px] hover:border-brand-accent transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.02)]">Tell
+                    me about her AI experience</button>
             </div>
             <div id="chat-msg-end"></div>
         </div>
 
         <form id="chat-form" class="border-t border-brand-border p-3 flex gap-2 bg-white rounded-b-[12px]">
-            <input type="text" id="chat-input" placeholder="Ask anything about my work..." class="flex-1 border border-brand-border rounded-[8px] px-3 py-2 text-[14px] focus:outline-none focus:border-brand-accent placeholder:text-brand-muted" autocomplete="off">
-            <button type="submit" aria-label="Send message" class="bg-brand-accent text-white px-3 py-2 rounded-[8px] hover:bg-[#E63E00] disabled:opacity-50 transition-colors" id="chat-send">
+            <input type="text" id="chat-input" placeholder="Ask anything about my work..."
+                class="flex-1 border border-brand-border rounded-[8px] px-3 py-2 text-[14px] focus:outline-none focus:border-brand-accent placeholder:text-brand-muted"
+                autocomplete="off">
+            <button type="submit" aria-label="Send message"
+                class="bg-brand-accent text-white px-3 py-2 rounded-[8px] hover:bg-[#E63E00] disabled:opacity-50 transition-colors"
+                id="chat-send">
                 <i data-lucide="send" class="w-[18px] h-[18px]"></i>
             </button>
         </form>
@@ -2515,13 +2684,13 @@
         const chatIconOpen = document.getElementById('chat-icon-open');
         const chatIconClose = document.getElementById('chat-icon-close');
         const chatTooltip = document.getElementById('chat-tooltip');
-        
+
         let chatOpen = false;
         let tooltipShown = false;
-        
+
         // Tooltip appears for 4s on first load
         setTimeout(() => {
-            if(!chatOpen && !tooltipShown && chatTooltip) {
+            if (!chatOpen && !tooltipShown && chatTooltip) {
                 chatTooltip.classList.remove('opacity-0');
                 tooltipShown = true;
                 setTimeout(() => {
@@ -2532,7 +2701,7 @@
 
         const toggleChat = () => {
             chatOpen = !chatOpen;
-            if(chatOpen) {
+            if (chatOpen) {
                 chatDrawer.classList.remove('hidden');
                 setTimeout(() => chatDrawer.classList.add('open'), 10);
                 chatIconOpen.classList.add('hidden');
@@ -2546,8 +2715,8 @@
             }
         };
 
-        if(chatTrigger) chatTrigger.addEventListener('click', toggleChat);
-        if(chatClose) chatClose.addEventListener('click', toggleChat);
+        if (chatTrigger) chatTrigger.addEventListener('click', toggleChat);
+        if (chatClose) chatClose.addEventListener('click', toggleChat);
 
         // Chat Interaction handling
         const chatForm = document.getElementById('chat-form');
@@ -2558,7 +2727,7 @@
 
         const addMessage = (text, sender) => {
             const div = document.createElement('div');
-            if(sender === 'user') {
+            if (sender === 'user') {
                 div.className = 'bg-brand-accent text-white self-end w-fit max-w-[85%] px-[14px] py-[10px] rounded-[16px] rounded-br-[4px] leading-relaxed';
             } else {
                 div.className = 'bg-brand-surface text-brand-text self-start w-fit max-w-[85%] px-[14px] py-[10px] rounded-[16px] rounded-bl-[4px] leading-relaxed';
@@ -2579,31 +2748,31 @@
 
         const removeLoading = () => {
             const el = document.getElementById('chat-loading');
-            if(el) el.remove();
+            if (el) el.remove();
         };
 
         const handleSend = async (message) => {
-            if(!message.trim() || exchangeCount >= 6) return;
-            
-            if(chatSuggestions) chatSuggestions.style.display = 'none';
-            
+            if (!message.trim() || exchangeCount >= 6) return;
+
+            if (chatSuggestions) chatSuggestions.style.display = 'none';
+
             addMessage(message, 'user');
             chatInput.value = '';
             exchangeCount++;
-            
+
             chatInput.disabled = true;
             const chatSendBtn = document.getElementById('chat-send');
-            if(chatSendBtn) chatSendBtn.disabled = true;
-            
+            if (chatSendBtn) chatSendBtn.disabled = true;
+
             setTimeout(() => { showLoading(); }, 150);
 
             try {
                 // MOCK API - logic similar to p1.html
                 setTimeout(() => {
                     removeLoading();
-                    
+
                     let response = "That's a great question about Keerthana! In production, this widget connects to an AI backend to provide direct answers.";
-                    
+
                     const lowerMsg = message.toLowerCase();
                     if (lowerMsg.includes("stack") || lowerMsg.includes("technolog")) {
                         response = "Keerthana works with Next.js, React, Node.js, Python, and SQL. She's also experienced integrating models like BERT.";
@@ -2620,10 +2789,10 @@
                     }
 
                     addMessage(response, 'assistant');
-                    
-                    if(exchangeCount < 6) {
+
+                    if (exchangeCount < 6) {
                         chatInput.disabled = false;
-                        if(chatSendBtn) chatSendBtn.disabled = false;
+                        if (chatSendBtn) chatSendBtn.disabled = false;
                         chatInput.focus();
                     } else {
                         chatInput.placeholder = 'Conversation limit reached.';
@@ -2633,11 +2802,11 @@
                 removeLoading();
                 addMessage("Something went wrong on my end — you can reach Keerthana directly at keerthana.b.v.codes@gmail.com", 'assistant');
                 chatInput.disabled = false;
-                if(chatSendBtn) chatSendBtn.disabled = false;
+                if (chatSendBtn) chatSendBtn.disabled = false;
             }
         };
 
-        if(chatForm) {
+        if (chatForm) {
             chatForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 handleSend(chatInput.value);
@@ -2650,9 +2819,9 @@
             });
         });
 
-        if(chatInput) {
+        if (chatInput) {
             chatInput.addEventListener('keypress', (e) => {
-                if(e.key === 'Enter') {
+                if (e.key === 'Enter') {
                     e.preventDefault();
                     handleSend(chatInput.value);
                 }
