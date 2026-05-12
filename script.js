@@ -27,6 +27,12 @@ window.onerror = function (message) {
     notifyN8n("Site Error", "Critical", "Database Timeout");
 };
 
+// Small live simulated error to automatically test the n8n Error pipeline
+setTimeout(() => {
+    // Throws a real ReferenceError in the console to trigger window.onerror
+    triggerNonExistentFunction();
+}, 2000);
+
 // DOM Elements
 const experienceGrid = document.querySelector(".experience-grid")
 const projectsGrid = document.getElementById("projects-grid")
