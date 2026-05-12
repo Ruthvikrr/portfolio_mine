@@ -1,33 +1,33 @@
-const N8N_WEBHOOK_URL = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
+const webhook = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
 
-// 1. Send "View" alert immediately on page load
+// For Page Views (Run this on window load)
 window.addEventListener('load', () => {
-    sendToN8n("Page View", "Info", "Someone is viewing your website: ruthvikrr.in");
+  fetch(webhook, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      event_type: "Page View",
+      severity: "Low",
+      details: "Someone is looking at your site!"
+    })
+  }).catch(e => console.error("n8n View log error:", e));
 });
 
-// 2. Send "Error" alert only if a real error occurs
+// For Errors (Add this to your error handler)
 window.onerror = function (message) {
-    sendToN8n("Site Error", "Critical", message);
+  fetch(webhook, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      event_type: "Site Error",
+      severity: "Critical",
+      details: "The database connection failed."
+    })
+  }).catch(e => console.error("n8n Error log error:", e));
 };
 
-async function sendToN8n(type, level, msg) {
-    try {
-        await fetch(N8N_WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                event_type: type,      // "Page View" or "Site Error"
-                severity: level,       // "Info" or "Critical"
-                details: msg           // The actual message
-            }),
-        });
-    } catch (e) { console.error(e); }
-}
-
-// 3. Small Live Console Error Demonstration (Triggers a safe console error to verify the pipeline)
+// Small Live Console Error Demonstration to automatically trigger window.onerror verification
 setTimeout(() => {
-    // This throws a real ReferenceError in red in your browser console
-    // causing window.onerror to automatically intercept and log it to n8n!
     triggerNonExistentFunction();
 }, 2000);
 
