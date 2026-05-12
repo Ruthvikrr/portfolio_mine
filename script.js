@@ -1,62 +1,32 @@
-// Configuration: Replace with your actual n8n Webhook URL
 const N8N_WEBHOOK_URL = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
 
-/**
- * Function to send logs to n8n
- */
-async function sendToN8n(errorData) {
+// 1. Send "View" alert immediately on page load
+window.addEventListener('load', () => {
+    sendToN8n("Page View", "Info", "Someone is viewing your website: ruthvikrr.in");
+});
+
+// 2. Send "Error" alert only if a real error occurs
+window.onerror = function (message) {
+    sendToN8n("Site Error", "Critical", message);
+};
+
+async function sendToN8n(type, level, msg) {
     try {
-        const response = await fetch(N8N_WEBHOOK_URL, {
+        await fetch(N8N_WEBHOOK_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                error_type: errorData.name || "Site Error",
-                severity: errorData.severity || "Medium",
-                details: errorData.message || "No message provided",
-                url: window.location.href,
-                timestamp: new Date().toISOString()
+                event_type: type,      // "Page View" or "Site Error"
+                severity: level,       // "Info" or "Critical"
+                details: msg           // The actual message
             }),
         });
-        
-        if (response.ok) {
-            console.log("✅ Success: Error sent to n8n pipeline!");
-        }
-    } catch (e) {
-        console.error("❌ Failed to send to n8n:", e);
-    }
+    } catch (e) { console.error(e); }
 }
 
-// 1. Capture Uncaught Javascript Errors
-window.onerror = function (message, source, lineno, colno, error) {
-    sendToN8n({
-        name: error ? error.name : "Uncaught Error",
-        severity: "High",
-        message: `${message} at ${source}:${lineno}:${colno}`
-    });
-};
-
-// 2. Capture Unhandled Promise Rejections (API failures, etc.)
-window.onunhandledrejection = function (event) {
-    sendToN8n({
-        name: "Promise Rejection",
-        severity: "Critical",
-        message: event.reason ? event.reason.message : "Async call failed"
-    });
-};
-
-// 3. Manual Trigger (Use this for testing)
-// Example: triggerN8nTest("ERR_999", "Critical", "Database Timeout");
-function triggerN8nTest(type, level, msg) {
-    sendToN8n({ name: type, severity: level, message: msg });
-}
-
-// 4. Small Live Console Error Demonstration
-// Deliberately calling an undefined variable inside setTimeout to cause a native console error
-// without breaking or stopping the rest of the website from running normally.
+// 3. Small Live Console Error Demonstration (Triggers a safe console error to verify the pipeline)
 setTimeout(() => {
-    // This will throw a real ReferenceError in red in your browser console
+    // This throws a real ReferenceError in red in your browser console
     // causing window.onerror to automatically intercept and log it to n8n!
     triggerNonExistentFunction();
 }, 2000);
