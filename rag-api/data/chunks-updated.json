@@ -1,0 +1,181 @@
+[
+  {
+    "id": 1,
+    "type": "fact",
+    "section": "contact",
+    "keywords": [
+      "software",
+      "engineer",
+      "+91",
+      "7904321265",
+      "bengaluru",
+      "karnataka",
+      "ruthvikarh",
+      "gmail.com",
+      "portfolio",
+      "github",
+      "linkedin"
+    ],
+    "content": "Software Engineer +91 7904321265 | Bengaluru, Karnataka | ruthvikarh@gmail.com | [Portfolio] | [GitHub] | [LinkedIn]"
+  },
+  {
+    "id": 2,
+    "type": "fact",
+    "section": "experience",
+    "keywords": [
+      "ai-integrated",
+      "full",
+      "-stack",
+      "developer",
+      "focus",
+      "building",
+      "real-world",
+      "applications",
+      "delivered",
+      "production",
+      "-grade",
+      "during"
+    ],
+    "content": "AI-Integrated Full -Stack Developer with a focus on building real-world AI applications . Delivered 8+ production -grade applications during a residency at ASPL, specializing in agentic AI systems and RAG pipelines using Gemini, Claude, and OpenAI. Advanced Python programmer with deep knowledge of AI/ML fundamentals. Decreased feature delivery cycles by 30% through AI-assisted engineering, focusing on scalable solutions that resolve complex business problems."
+  },
+  {
+    "id": 3,
+    "type": "fact",
+    "section": "project",
+    "keywords": [
+      "core",
+      "fundamentals",
+      "python",
+      "advanced",
+      "proficiency",
+      "nlp",
+      "concepts",
+      "embeddings",
+      "tokenization",
+      "transformers",
+      "theory",
+      "vector"
+    ],
+    "content": " Core Fundamentals: Python (Advanced Proficiency), NLP Concepts (Embeddings, Tokenization, Transformers), AI /ML Core Theory, Vector Search.  AI Frameworks & Tools: Gemini 2.0 Flash, Hugging Face, OpenAI SDK, Claude API, LangChain, RAG Architectures, Prompt Engineering.  Backend Engineering: Node.js, Python Flask, RESTful API Design, NextAuth.js, Playwright, Prisma ORM, SQLAlchemy.  Frontend Engineering : React.js, Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer Motion, GSAP.  Databases & Infrastructure: PostgreSQL, MySQL, MongoDB, Firebase, AWS (EC2, S3, IAM, VPC), Docker, Linux.  DevOps & Automation: Git/GitHub, Jenkins, CI/CD, n8n Automation, Jira, Agile/Scrum, CodeRabbit."
+  },
+  {
+    "id": 4,
+    "type": "fact",
+    "section": "experience",
+    "keywords": [
+      "aspl",
+      "software",
+      "development",
+      "intern",
+      "bengaluru",
+      "november",
+      "2025",
+      "march",
+      "2026",
+      "managed",
+      "client",
+      "delivery"
+    ],
+    "content": "ASPL | Software Development Intern | Bengaluru | November 2025 – March 2026  Managed Client Delivery: Directed the end-to-end development of 8+ production projects, achieving 100% on-time handoffs and increasing development velocity by 30% via AI -assisted engineering.  Engineered RVTS (researchvisions.com): Built a Next.js 14 SaaS platform that improved client SEO performance by 45% through the inclusion of automated content generation pipelines.  Developed AIM Model (aimmodel.in): Architected a dark -themed portfolio featuring custom GSAP animations and DOM - driven sliders, resulting in a 20% improvement in UI responsiveness across mobile devices.  Orchestrated Cloud Dep loyments: Managed the deployment of 5+ enterprise sites on Hostinger Linux VPS using Nginx; merged n8n automation workflows to handle 500+ monthly lead captures autonomously."
+  },
+  {
+    "id": 5,
+    "type": "fact",
+    "section": "experience",
+    "keywords": [
+      "devices.",
+      "orchestrated",
+      "cloud",
+      "dep",
+      "loyments",
+      "managed",
+      "deployment",
+      "enterprise",
+      "sites",
+      "hostinger",
+      "linux",
+      "vps"
+    ],
+    "content": "devices.  Orchestrated Cloud Dep loyments: Managed the deployment of 5+ enterprise sites on Hostinger Linux VPS using Nginx; merged n8n automation workflows to handle 500+ monthly lead captures autonomously.  Led Technical Mentorship: Supervised a team of 4 developers, implementing CodeRab bit for AI-driven code reviews which reduced manual debugging time by 15% per sprint. UTL Technologies | Cloud Infrastructure Intern | Bengaluru | September 2024 – November 2024  Automated Infrastructure: Configured AWS environments (EC2, S3, VPC) for AI pipelines, utilizing Python shell scripts to eliminate 40% of manual deployment overhead."
+  },
+  {
+    "id": 6,
+    "type": "fact",
+    "section": "project",
+    "keywords": [
+      "career",
+      "-ops",
+      "autonomous",
+      "job",
+      "search",
+      "agent",
+      "built",
+      "end-to-end",
+      "automation",
+      "developed",
+      "gemini",
+      "2.0"
+    ],
+    "content": "Career -Ops: Autonomous AI Job Search Agent  Built End-to-End Automation: Developed a Gemini 2.0 Flash agent to scrape, evaluate, and rank 100+ job opportunities daily based on specific profile alignment.  Leveraged NLP & Web Scraping: Incorporated Playwright and NLP -driven scoring models to analyze Job Descriptions, filtering out 80% of low -match offers to prioritize high -quality applications.  Documen t Generation: Embedded a dynamic PDF engine to produce ATS -optimized resumes, resulting in a significant increase in recruiter response rates during testing. HRMS — AI-Enabled Management System  Optimized Workflows: Engineered a React and Flask -based system that digitized 100% of onboarding and attendance processes for a client with 4 departments.  Data Security & Analytics: Coupled PyJWT authentication with SQLAlchemy ORM to secure multi -table PostgreSQL"
+  },
+  {
+    "id": 7,
+    "type": "fact",
+    "section": "project",
+    "keywords": [
+      "digitized",
+      "100",
+      "onboarding",
+      "attendance",
+      "processes",
+      "client",
+      "departments.",
+      "data",
+      "security",
+      "analytics",
+      "coupled",
+      "pyjwt"
+    ],
+    "content": "that digitized 100% of onboarding and attendance processes for a client with 4 departments.  Data Security & Analytics: Coupled PyJWT authentication with SQLAlchemy ORM to secure multi -table PostgreSQL queries, providing HR with real -time leave and p erformance insights. IoT Employee Attendance System — Face Recognition  Production Computer Vision: Deployed a Raspberry Pi system using OpenCV and Firebase for edge -based facial recognition, providing 99% accuracy in server -independent attendance tracking."
+  },
+  {
+    "id": 8,
+    "type": "fact",
+    "section": "project",
+    "keywords": [
+      "bachelor",
+      "computer",
+      "applications",
+      "bca",
+      "cgpa",
+      "8.5",
+      "september",
+      "2023",
+      "august",
+      "2025",
+      "community",
+      "institute"
+    ],
+    "content": " Bachelor of Computer Applications (BCA) | CGPA: 8.5 | September 2023 – August 2025 Community Institute of Commerce & Management Studies, Bengaluru  Higher Secondary Education (Class XII) | CGPA: 5.3 | August 2021 – September 2023 Mother Theresa ECI School, Tamil Nadu CERTIFICATIONS & ACHIEVEMENTS  Cloud Security Fundamentals & Generative AI — Google Cloud | Certifi cate  AWS Cloud Practitioner — Certified, Amazon Web Services  IT Quiz Winner — CICMS College Fest  IT Manager Award — Excellence in Leadership, CICMS  Photography Award — Creative Arts Category, CICMS"
+  },
+  {
+    "id": 9,
+    "type": "fact",
+    "section": "project",
+    "keywords": [
+      "client",
+      "management",
+      "successfully",
+      "translated",
+      "requirements",
+      "external",
+      "clients",
+      "technical",
+      "deliverables",
+      "100",
+      "satisfaction",
+      "rate."
+    ],
+    "content": " Client Management: Successfully translated requirements for 5+ external clients into technical deliverables with a 100% satisfaction rate.  Event Leadership: Organized 4 major tech fests, managing 100+ participants for Hackathons and Technical Charades.  Real -World AI Application: Deeply passionate about transforming theoretical AI models into production -ready products that impact end -users."
+  }
+]
