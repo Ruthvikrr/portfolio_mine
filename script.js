@@ -1,4 +1,4 @@
-const N8N_WEBHOOK_URL = 'https://dxftuiy8upojl.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
+const N8N_WEBHOOK_URL = 'https://fbdbdx.app.n8n.cloud/webhook/bc6ce065-4842-4499-8f05-068067d876cc';
 
 // Unified helper function for n8n Aggregate node
 async function notifyN8n(eventType, severity, details) {
