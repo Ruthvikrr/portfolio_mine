@@ -1270,6 +1270,8 @@ function initRagChatWidget() {
   const chips = document.querySelectorAll(".rag-chip")
   const cta = document.getElementById("rag-contact-cta")
   const openers = document.querySelectorAll("[data-open-rag-chat]")
+  const popup = document.getElementById("rag-chat-popup")
+  const popupClose = document.getElementById("rag-chat-popup-close")
 
   if (!root || !bubble || !panel || !form || !input || !messages) return
 
@@ -1295,6 +1297,7 @@ function initRagChatWidget() {
   const openPanel = () => {
     panel.classList.add("open")
     panel.setAttribute("aria-hidden", "false")
+    if (popup) popup.classList.remove("show")
     setTimeout(() => input.focus(), 50)
   }
 
@@ -1302,6 +1305,20 @@ function initRagChatWidget() {
     panel.classList.remove("open")
     panel.setAttribute("aria-hidden", "true")
     bubble.focus()
+  }
+
+  if (popup && popupClose) {
+    // Show popup after 3 seconds if panel is not open
+    setTimeout(() => {
+      if (!panel.classList.contains("open")) {
+        popup.classList.add("show")
+      }
+    }, 3000)
+
+    popupClose.addEventListener("click", (e) => {
+      e.stopPropagation()
+      popup.classList.remove("show")
+    })
   }
 
   bubble.addEventListener("click", () => {

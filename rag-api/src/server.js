@@ -4,6 +4,7 @@ import { config, validateRuntimeConfig } from "./config.js";
 import { embedQuery, retrieveTopChunks } from "./retrieval.js";
 import { buildContextBlock, buildSystemPrompt, buildUserPrompt, routeModel } from "./prompt.js";
 import Groq from "groq-sdk";
+import nodemailer from "nodemailer";
 
 const app = express();
 app.use(cors());
@@ -64,6 +65,35 @@ async function streamGroq({ messages, apiKey, onText }) {
   }
 }
 
+async function sendErrorAlert(errorDetails, userMessage) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+    console.warn("Email alert skipped: EMAIL_USER or EMAIL_APP_PASSWORD not set in .env");
+    return;
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_APP_PASSWORD
+      }
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'disturbdont879@gmail.com',
+      subject: '⚠️ ALERT: Portfolio Chatbot Error',
+      text: `Your chatbot encountered an error while processing a message.\n\nUser Message: "${userMessage}"\n\nError Details:\n${errorDetails}\n\nTime: ${new Date().toISOString()}`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log("Error alert email sent successfully.");
+  } catch (err) {
+    console.error("Failed to send error alert email:", err);
+  }
+}
+
 app.get(["/health", "/api/health"], (_, res) => {
   res.json({ ok: true, service: "ruthvik-rag-api" });
 });
@@ -115,6 +145,10 @@ app.post(["/chat", "/api/chat"], async (req, res) => {
     writeSse(res, { type: "done" });
     res.end();
   } catch (err) {
+    console.error("Chat API Error:", err);
+    // Send automated email alert!
+    await sendErrorAlert(err.stack || err.message, userMessage);
+    
     writeSse(res, { type: "error", message: err.message || "Unknown server error" });
     res.end();
   }
